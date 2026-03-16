@@ -9,6 +9,10 @@ export default function Hero() {
     link.click()
     document.body.removeChild(link)
   }
+
+  const scrollToPortfolio = () => {
+    document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <section
       id="hero"
@@ -73,9 +77,9 @@ export default function Hero() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col md:flex-row gap-4"
             >
-              <button className="px-8 py-4 bg-purple-600 text-white rounded-full font-semibold shadow-lg hover:bg-purple-700 transition transform hover:scale-105 hover:shadow-purple-300">
+              <button onClick={scrollToPortfolio} className="px-8 py-4 bg-purple-600 text-white rounded-full font-semibold shadow-lg hover:bg-purple-700 transition transform hover:scale-105 hover:shadow-purple-300">
                 View Portfolio
               </button>
 
